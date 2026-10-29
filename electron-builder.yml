@@ -1,0 +1,29 @@
+appId: local.overwatch-time.desktop
+productName: 屁股时间
+executableName: OverwatchTime
+directories:
+  output: release
+  buildResources: assets
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: assets/icon.ico
+  signAndEditExecutable: false
+nsis:
+  artifactName: OverwatchShowtime-${version}-Setup-${arch}.${ext}
+  guid: 7ce3d20d-89b2-4e22-a445-65517b98a9e8
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 屁股时间
+  uninstallDisplayName: 屁股时间
+  runAfterFinish: false
+  deleteAppDataOnUninstall: false
+  installerLanguages: [zh_CN, en_US]
+  language: 2052
+  warningsAsErrors: true
+publish: null

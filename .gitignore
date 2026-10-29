@@ -1,0 +1,12 @@
+node_modules/
+dist/
+release/
+build-cache/
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.log
+.DS_Store

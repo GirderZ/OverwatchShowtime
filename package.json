@@ -1,0 +1,35 @@
+{
+  "name": "overwatch-time",
+  "productName": "屁股时间",
+  "version": "0.2.1",
+  "description": "Overwatch Showtime · 游戏时间记录与周报月报",
+  "private": true,
+  "author": "OverwatchTime Personal Project",
+  "main": "app/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "demo": "electron . --demo",
+    "test": "node --test test/*.test.cjs",
+    "build:win": "node scripts/package.cjs",
+    "preview": "node scripts/preview.cjs",
+    "release:win": "powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/release.ps1",
+    "install:agent": "powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "45.1.0",
+    "electron-builder": "26.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GirderDog/OverwatchShowtime.git"
+  },
+  "homepage": "https://github.com/GirderDog/OverwatchShowtime#readme",
+  "bugs": {
+    "url": "https://github.com/GirderDog/OverwatchShowtime/issues"
+  }
+}
