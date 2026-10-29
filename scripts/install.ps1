@@ -2,7 +2,7 @@
 [CmdletBinding()]
 param(
     [ValidatePattern('^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$')]
-    [string]$Repository = 'GGirderZ/OverwatchShowtime',
+    [string]$Repository = 'GirderZ/OverwatchShowtime',
     [ValidatePattern('^v\d+\.\d+\.\d+$')]
     [string]$Version,
     [string]$InstallDir = (Join-Path $env:LOCALAPPDATA 'Programs\OverwatchShowtime'),
