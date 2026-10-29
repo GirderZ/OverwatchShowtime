@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: windows-release-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: windows-latest
@@ -32,6 +35,22 @@ jobs:
         shell: powershell
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Verify silent install and uninstall
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $installRoot = Join-Path $env:RUNNER_TEMP 'OverwatchShowtime-install-check'
+          $setup = @(Get-ChildItem release/*Setup-x64.exe)
+          if ($setup.Count -ne 1) { throw 'Expected exactly one installer' }
+          $process = Start-Process -FilePath $setup[0].FullName -ArgumentList "/S /currentuser /D=$installRoot" -Wait -PassThru
+          if ($process.ExitCode -ne 0) { throw "Silent install failed: $($process.ExitCode)" }
+          if (-not (Test-Path -LiteralPath (Join-Path $installRoot 'OverwatchTime.exe'))) { throw 'Installed executable missing' }
+          if (-not (Test-Path -LiteralPath (Join-Path $installRoot 'resources/app.asar.unpacked/app/windows/monitor.ps1'))) { throw 'Installed monitor missing' }
+          $uninstallers = @(Get-ChildItem -LiteralPath $installRoot -Filter 'Uninstall*.exe')
+          if ($uninstallers.Count -ne 1) { throw 'Uninstaller missing' }
+          $process = Start-Process -FilePath $uninstallers[0].FullName -ArgumentList '/S' -Wait -PassThru
+          if ($process.ExitCode -ne 0) { throw "Silent uninstall failed: $($process.ExitCode)" }
+          if (Test-Path -LiteralPath (Join-Path $installRoot 'OverwatchTime.exe')) { throw 'Uninstall did not remove executable' }
       - uses: actions/upload-artifact@v4
         with:
           name: windows-release
