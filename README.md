@@ -4,7 +4,7 @@ Windows 10 / 11 x64 守望先锋游戏时间记录工具。自动记录运行、
 
 打开游戏自动记录，退出后自动结算；平时收在托盘，需要时查看今天玩了多久、最近的游玩习惯和周报月报。无需登录游戏账号，记录保存在本地。
 
-[下载最新版](https://github.com/GirderDog/OverwatchShowtime/releases/latest) · [Agent 安装](#交给-agent-安装) · [更多界面](#界面预览)
+[下载最新版](https://github.com/GirderZ/OverwatchShowtime/releases/latest) · [Agent 安装](#交给-agent-安装) · [更多界面](#界面预览)
 
 ![浅色时间仪表盘：今日前台与运行时长、24 小时分布和 12 周热力图](docs/screenshots/dashboard-light.jpg)
 
@@ -19,7 +19,7 @@ Windows 10 / 11 x64 守望先锋游戏时间记录工具。自动记录运行、
 
 ## 下载与安装
 
-前往 [最新版本 Releases](https://github.com/GirderDog/OverwatchShowtime/releases/latest)，按需选择：
+前往 [最新版本 Releases](https://github.com/GirderZ/OverwatchShowtime/releases/latest)，按需选择：
 
 | 方式 | 文件／入口 | 使用方法 |
 | --- | --- | --- |
@@ -33,7 +33,7 @@ Windows 10 / 11 x64 守望先锋游戏时间记录工具。自动记录运行、
 
 可以直接向能够操作 Windows 的 agent 发送：
 
-> 帮我安装 https://github.com/GirderDog/OverwatchShowtime 的最新稳定版。阅读仓库 AGENTS.md 和 scripts/install.ps1，下载发行版安装脚本，检查后执行，保留已有游玩记录。
+> 帮我安装 https://github.com/GirderZ/OverwatchShowtime 的最新稳定版。阅读仓库 AGENTS.md 和 scripts/install.ps1，下载发行版安装脚本，检查后执行，保留已有游玩记录。
 
 也可以下载 Release 中的 `install.ps1` 后，在 PowerShell 中执行：
 
