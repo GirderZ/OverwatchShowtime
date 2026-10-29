@@ -10,6 +10,8 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Utility') -ErrorAction Stop
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Management') -ErrorAction Stop
 if ($env:OS -ne 'Windows_NT' -or -not [Environment]::Is64BitOperatingSystem -or $env:PROCESSOR_ARCHITECTURE -eq 'ARM64') { throw 'Windows x64 is required.' }
 if ($InstallDir.Contains('"') -or $InstallDir.Contains("`n") -or $InstallDir.Contains("`r")) { throw 'Invalid installation path.' }
 $InstallDir = [IO.Path]::GetFullPath($InstallDir)

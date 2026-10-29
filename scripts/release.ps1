@@ -2,6 +2,9 @@
 param([string]$Prepackaged)
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Utility') -ErrorAction Stop
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Management') -ErrorAction Stop
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Archive') -ErrorAction Stop
 $projectRoot = Split-Path -Parent $PSScriptRoot
 Push-Location $projectRoot
 try {
