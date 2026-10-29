@@ -2,6 +2,21 @@
 
 Windows 10 / 11 x64 守望先锋游戏时间记录工具。自动记录运行、前台及疑似无操作时长，提供日／周／月统计、热力图和本地报表。
 
+打开游戏自动记录，退出后自动结算；平时收在托盘，需要时查看今天玩了多久、最近的游玩习惯和周报月报。无需登录游戏账号，记录保存在本地。
+
+[下载最新版](https://github.com/GirderDog/OverwatchShowtime/releases/latest) · [Agent 安装](#交给-agent-安装) · [更多界面](#界面预览)
+
+![浅色时间仪表盘：今日前台与运行时长、24 小时分布和 12 周热力图](docs/screenshots/dashboard-light.jpg)
+
+> 所有截图均为 v0.2.1 演示模式的虚构数据，不包含个人游玩记录、账号或电脑信息。
+
+| 想知道什么 | 在哪里看 |
+| --- | --- |
+| 今天玩了多久，切到后台多久？ | 时间仪表盘：前台／运行时长、24 小时分布 |
+| 哪天玩得多，最近是否经常玩？ | 12 周热力图，点击日期联动查看 |
+| 每次几点开始、几点结束？ | 游玩记录，可按周期查看并导出 CSV |
+| 一周／一个月的游玩习惯？ | 周报月报：趋势、高峰时段、工作日／周末和时间构成 |
+
 ## 下载与安装
 
 前往 [最新版本 Releases](https://github.com/GirderDog/OverwatchShowtime/releases/latest)，按需选择：
@@ -31,6 +46,35 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Version v
 脚本使用 GitHub Releases 下载、校验 SHA-256，默认安装到 `%LOCALAPPDATA%\Programs\OverwatchShowtime`，无需管理员权限。支持 `-InstallDir` 自定义安装目录。无网络或无法访问 GitHub 时，可手动下载免安装 ZIP。
 
 当前发行版未配置代码签名，Windows 可能显示未知发布者。真实游戏识别、锁屏、休眠和系统通知的验收边界见 [VALIDATION.md](VALIDATION.md)。
+
+## 界面预览
+
+以下均为示例数据；点击图片可查看原图。
+
+### 深色主题
+
+浅色和深色主题可随时切换，记录状态与图表保持一致。
+
+![深色时间仪表盘：前台运行时长、时间分布和热力图](docs/screenshots/dashboard-dark.jpg)
+
+### 游玩记录
+
+查看每次游玩的起止时间、前台与运行时长，按日／周／月筛选，并导出时间明细。
+
+![本周游玩记录：起止时间、前台时长、运行时长和 CSV 导出](docs/screenshots/play-records.jpg)
+
+### 周报月报
+
+一页查看周期趋势、游玩天数、高峰时段、工作日／周末分布和时间构成，支持保存 Markdown／JSON 报表。
+
+![完整自然周周报：星期趋势、高峰时段、工作日周末占比与每日明细](docs/screenshots/weekly-report.jpg)
+
+<details>
+<summary>展开查看月报完整截图（自然月趋势与每日明细）</summary>
+
+![月报示例：自然月日期轴、时间分析和每日明细](docs/screenshots/monthly-report.jpg)
+
+</details>
 
 ## 从源码构建
 

@@ -19,7 +19,7 @@ async function main() {
     overwrite: true, prune: true, appVersion: require('../package.json').version,
     asar: { unpack: '**/windows/**' },
     electronZipDir: fs.existsSync(archive) ? offline : undefined,
-    ignore: [/^\/(test|scripts|dist|release|\.github|\.git)(\/|$)/, /^\/.*\.(zip|log)$/],
+    ignore: [/^\/(test|scripts|docs|dist|release|\.github|\.git)(\/|$)/, /^\/.*\.(zip|log)$/],
     download: { cacheRoot: path.join(root, '..', 'electron-cache'), checksums }
   });
   for (const folder of results) {
