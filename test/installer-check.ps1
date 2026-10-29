@@ -6,7 +6,7 @@ $global:owTestStarted = 0
 $global:owTestTarget = Join-Path $testRoot 'installed app'
 function Invoke-RestMethod {
     param($Uri, $Headers)
-    $base = 'https://github.com/GirderDog/OverwatchShowtime/releases/download/v0.2.1/'
+    $base = 'https://github.com/rderZ/OverwatchShowtime/releases/download/v0.2.1/'
     @{ tag_name='v0.2.1'; draft=$false; prerelease=$false; assets=@(
         @{ name='OverwatchShowtime-0.2.1-Setup-x64.exe'; browser_download_url=($base + 'OverwatchShowtime-0.2.1-Setup-x64.exe') },
         @{ name='SHA256SUMS.txt'; browser_download_url=($base + 'SHA256SUMS.txt') }
